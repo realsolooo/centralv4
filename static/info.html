@@ -11,61 +11,162 @@
 <script src="/assets/js/cdn-rocket.js?v=3"></script>
 <script src="/assets/js/anym.js?v=3"></script>
 <style>
-.centered-div {
-  position: absolute;
-  top: 50px;
-  color: #fff;
-  width: 850px;
-  height: 780px;
-  margin-bottom: 20px;
-  box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.4);
-  background-color: rgba(128, 128, 128, 0.162);
-  left: 50%;
-  border-radius: 10px;
-  transform: translate(-50%);
-  text-align: center;
-}
+  /* Fullscreen particles background */
+  #particles-js {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 0;
+  }
+  /* Bring content above particles */
+  body > *:not(#particles-js) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .centered-div {
+    position: absolute;
+    top: 50px;
+    color: #fff;
+    width: 850px;
+    height: 780px;
+    margin-bottom: 20px;
+    box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.4);
+    background-color: rgba(128, 128, 128, 0.162);
+    left: 50%;
+    border-radius: 10px;
+    transform: translate(-50%);
+    text-align: center;
+  }
+
+  /* Footer fixed position on top of content */
+  .footer {
+    position: fixed;
+    text-align: right;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+  }
+
+  /* Style Discord/GitHub icons */
+  a i {
+    font-size: 30px;
+    margin: 0 10px;
+    color: #d200ff;
+  }
+  a:hover i {
+    color: #a100cc;
+  }
 </style>
 <title>Learn | Salyte</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
-<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6YEQ7Q0XRC');</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6YEQ7Q0XRC');
+</script>
 </head>
 <body>
- <div id="contextMenu" class="context-menu themesExcluded" style="--ripple-duration: 300ms;"><div class="context-menu-item with-submenu themesExcluded" id="contextItem" anim="ripple" onclick="toggleSubmenu(event)"><i class="bi bi-file-spreadsheet"></i> Tab Cloak</div><div class="context-submenu themesExcluded" id="contextItem"><div class="context-menu-item themesExcluded" id="contextItem" anim="ripple" onclick="tabCloak()">Enable</div><div class="context-menu-item themesExcluded" anim="ripple" onclick="disableTabCloak()">Disable</div></div><div class="context-menu-item themesExcluded" id="contextItem" onclick="visitSite()"><i class="bi bi-clock-history"></i> Last Visited Site</div><div class="context-menu-item themesExcluded" id="contextItem" onclick="openWindow()"><i class="bi bi-box-arrow-up-right"></i> About:Blank Cloak</div><div class="context-menu-item themesExcluded" id="contextItem" onclick="openSettings()"><i class="bi bi-gear"></i> View all Settings</div></div>
- <div class="centered-div">
-  <h1 style="font-size:68px;">Information</h1>
-  <div class="themesExcluded">
-    <h2>Website</h2>
-    <p>Solo Central</p>
+  <div id="particles-js"></div>
+
+  <div id="contextMenu" class="context-menu themesExcluded" style="--ripple-duration: 300ms;">
+    <div class="context-menu-item with-submenu themesExcluded" id="contextItem" anim="ripple" onclick="toggleSubmenu(event)">
+      <i class="bi bi-file-spreadsheet"></i> Tab Cloak
+    </div>
+    <div class="context-submenu themesExcluded" id="contextItem">
+      <div class="context-menu-item themesExcluded" id="contextItem" anim="ripple" onclick="tabCloak()">Enable</div>
+      <div class="context-menu-item themesExcluded" anim="ripple" onclick="disableTabCloak()">Disable</div>
+    </div>
+    <div class="context-menu-item themesExcluded" id="contextItem" onclick="visitSite()">
+      <i class="bi bi-clock-history"></i> Last Visited Site
+    </div>
+    <div class="context-menu-item themesExcluded" id="contextItem" onclick="openWindow()">
+      <i class="bi bi-box-arrow-up-right"></i> About:Blank Cloak
+    </div>
+    <div class="context-menu-item themesExcluded" id="contextItem" onclick="openSettings()">
+      <i class="bi bi-gear"></i> View all Settings
+    </div>
   </div>
-  <div class="themesExcluded">
-    <h2>Version</h2>
-    <p>V4.0.0</p>
+
+  <div class="centered-div">
+    <h1 style="font-size:68px;">Information</h1>
+    <div class="themesExcluded">
+      <h2>Website</h2>
+      <p>Solo Central</p>
+    </div>
+    <div class="themesExcluded">
+      <h2>Version</h2>
+      <p>V4.0.0</p>
+    </div>
+    <div class="themesExcluded">
+      <h2>Build Info</h2>
+      <p>Stable Build</p>
+    </div>
+    <div class="themesExcluded">
+      <h2>Developers</h2>
+      <p>soloo</p>
+      <p>fowntain</p>
+      <p>Derpman</p>
+    </div>
+    <h2>Theme Makers</h2>
+    <p>soloo - scripted it</p>
+    <p>fallon - who chose it</p>
+    <div class="themesExcluded">
+      <h2>Link Deployment Info</h2>
+      <p>Self Deployment (GitHub)</p>
+    </div>
+    <a href="https://dsc.gg/solooo" target="_blank" rel="noopener"><i class="bi bi-discord"></i></a>
+    <a href="https://github.com/realsolooo/centralv4" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
   </div>
-  <div class="themesExcluded">
-    <h2>Build Info</h2>
-    <p>Stable Build</p>
-</div>
-  <div class="themesExcluded">
-    <h2>Developers</h2>
-    <p>soloo</p>
-    <p>fowntain</p>
-    <p>Derpman</p>
-  </div>
-   <h2>Theme Makers</h2>
-   <p>soloo - scripted it</p>
-   <p>fallon - who chose it</p>
-   </div>
-  <div class="themesExcluded">
-    <h2>Link Deployment Info</h2>
-    <p>Self Deployment (GitHub)</p>
-  </div>
-  <a href="https://dsc.gg/solooo" target="new"><i class="bi bi-discord"></i></a>
-  <a href="https://github.com/realsolooo/centralv4" target="new"><i class="bi bi-github"></i></a>
-</div>
-  <div class="footer themesExcluded" style="position:fixed;text-align:right;">
+
+  <div class="footer themesExcluded">
     <a href="/">Back</a>
   </div>
+
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 202,
+          "density": { "enable": true, "value_area": 800 }
+        },
+        "color": { "value": "#d200ff" },
+        "shape": {
+          "type": "circle",
+          "stroke": { "width": 0, "color": "#000000" }
+        },
+        "opacity": { "value": 0.5, "random": false },
+        "size": { "value": 3.9, "random": true },
+        "line_linked": { "enable": false },
+        "move": {
+          "enable": true,
+          "speed": 6,
+          "direction": "bottom",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" },
+          "resize": true
+        },
+        "modes": {
+          "repulse": { "distance": 150, "duration": 0.4 },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+
   <script src="/assets/js/themes.js?v=3"></script>
   <script src="/assets/js/main.js?v=3"></script>
 </body>

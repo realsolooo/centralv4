@@ -14,8 +14,8 @@ function live() {
   }
   if(bgUrl === null || bgUrl === 'none' || bgUrl === '') {
     switch(selectedTheme) {
-      case 'deepsea':
-        applyTheme('rgba(19, 34, 48, 0.8)', "linear-gradient(to bottom right, rgb(16, 52, 82), rgb(9, 34, 55), black)");
+      case 'default - fallons':
+        applyTheme('rgba(255, 34, 148, 0.8)', "linear-gradient(to bottom right, rgb(208, 0, 255), rgb(136, 16, 163), black)");
         break;
       case 'equinox':
         applyTheme('rgb(24 24 24 / 32%)', "url('/assets/img/equinox.webp')");
